@@ -22,12 +22,30 @@
 const containsDuplicate = (nums) => {
   const hash = {};
   let answer = false;
-  nums.forEach(number => {
-      if (number in hash) {
-          answer = true;
-      } else {
-          hash[number] = 0;
-      }
-  });
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] in hash) {
+      answer = true;
+      break;
+    } else {
+        hash[nums[i]] = 0;
+    }
+  };
   return answer;
 };
+
+
+////
+
+
+function findSmallestInterval(numbers) {
+    let dif = Math.abs(numbers[0] - numbers[1]);
+    for (let i = 1; i < numbers.length - 1; i++) {
+        const num = numbers[i];
+        numbers.slice(i + 1).forEach(number => {
+            if (Math.abs(number - num) < dif) {
+                dif = Math.abs(number - num);
+            }
+        });
+    }
+    return dif;
+}
