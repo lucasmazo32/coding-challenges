@@ -9,8 +9,15 @@ const canFinish = function(numCourses, prerequisites) {
   });
   const done = [];
   for(let i = 0; i < numCourse; i++) {
-      if (obj[i] === null) {
-          done.push(i);
-      }
+    if (obj[i] === null) {
+        done.push(i);
+    }
+  }
+  const condition = true;
+  while (condition) {
+    const check = [];
+    if (check === []) {
+      condition = false;
+    }
   }
 };
